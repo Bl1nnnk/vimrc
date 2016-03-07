@@ -1,5 +1,4 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Maintainer: 
+"intainer: 
 "       Amir Salihefendic
 "       http://amix.dk - amix@amix.dk
 "
@@ -40,6 +39,8 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
+execute pathogen#infect()
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -59,7 +60,13 @@ let mapleader = ";"
 let g:mapleader = ";"
 
 " Fast saving
-nmap <leader>w :w!<cr>
+nmap <leader>w :w<CR>
+nmap <leader>x :x<CR>
+
+nmap <leader>q :q<CR>
+
+nmap <S-k> <C-b>
+nmap <S-j> <C-f>
 
 " :W sudo saves the file 
 " (useful for handling the permission-denied error)
@@ -181,14 +188,16 @@ set noswapfile
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use spaces instead of tabs
-" set expandtab
+set expandtab
+
+set number
 
 " Be smart when using tabs ;)
 set smarttab
 
-" 1 tab == 8 spaces
-set shiftwidth=8
-set tabstop=8
+" 1 tab == 4 spaces
+set shiftwidth=4
+set tabstop=4
 
 " Linebreak on 500 characters
 set lbr
@@ -223,16 +232,24 @@ map <c-space> ?
 map <silent> <leader><cr> :noh<cr>
 
 " Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+nmap <leader>a <C-W>h
+nmap <leader>f <C-W>l
+nmap <leader>s <C-W>j
+nmap <leader>d <C-W>k
 
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
 
 " Close all the buffers
 map <leader>ba :bufdo bd<cr>
+
+nmap <F7> :NERDTreeToggle<CR>
+let NERDTreeWinSize=32
+let NERDTreeWinPos="right"
+let NERDTreeShowHidden=1
+let NERDTreeMinimalUI=1
+let NERDTreeAutoDeleteBuffer=1
+let NERDTreeDirArrows = 0
 
 " Useful mappings for managing tabs
 map <leader>tn :tabnew<cr>
@@ -359,10 +376,10 @@ map <leader>s? z=
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 " Quickly open a buffer for scribble
-map <leader>q :e ~/buffer<cr>
+"map <leader>q :e ~/buffer<cr>
 
 " Quickly open a markdown buffer for scribble
-map <leader>x :e ~/buffer.md<cr>
+"map <leader>x :e ~/buffer.md<cr>
 
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>

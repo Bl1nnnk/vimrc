@@ -67,6 +67,7 @@ nmap <leader>q :q<CR>
 
 nmap <S-k> <C-b>
 nmap <S-j> <C-f>
+nmap <C-]> g<C-]>
 
 " :W sudo saves the file 
 " (useful for handling the permission-denied error)

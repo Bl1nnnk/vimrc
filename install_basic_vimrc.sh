@@ -1,5 +1,6 @@
-cd ~/.vim_runtime
-cat ~/.vim_runtime/vimrcs/basic.vim > ~/.vimrc
+#cd ~/.vim_runtime
+#cat ~/.vim_runtime/vimrcs/basic.vim > ~/.vimrc
+cat ./vimrcs/basic.vim > ~/.vimrc
 
 #install pathogen for vim
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
